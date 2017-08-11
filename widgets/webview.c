@@ -24,6 +24,7 @@
 #include "globalconf.h"
 #include "widgets/common.h"
 #include "widgets/webview.h"
+#include "widgets/webview/filechooser.c"
 #include "common/property.h"
 #include "luah.h"
 #include "clib/widget.h"
@@ -1283,6 +1284,7 @@ widget_webview(lua_State *L, widget_t *w, luakit_token_t UNUSED(token))
       LUAKIT_WIDGET_SIGNAL_COMMON(w)
       "signal::button-press-event",                   G_CALLBACK(webview_button_cb),            w,
       "signal::button-release-event",                 G_CALLBACK(webview_button_cb),            w,
+      "signal::run-file-chooser",                     G_CALLBACK(run_file_chooser_request_cb),  w,
       "signal::scroll-event",                         G_CALLBACK(webview_scroll_cb),            w,
       "signal::create",                               G_CALLBACK(create_cb),                    w,
       "signal::web-process-crashed",                  G_CALLBACK(webview_crashed_cb),           w,

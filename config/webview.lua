@@ -236,6 +236,18 @@ function webview.methods.scroll(view, w, new)
     end
 end
 
+  run_file_chooser = function (view, w)
+        -- Action to take when a file chooser is requested
+        view:add_signal("run-file-chooser", function(v, request)
+            -- print(request.multiple)
+            -- print(request.selected_files)
+            -- print(request.mime_types)
+            -- request:select_files({"/path/to/file"})
+            return false -- true if you want to handle this request
+        end)
+    end,
+}
+
 local wrap_widget_metatable
 do
     local wrapped = false

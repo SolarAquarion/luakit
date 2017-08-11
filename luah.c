@@ -26,6 +26,7 @@
 
 /* include clib headers */
 #include "clib/download.h"
+#include "clib/filechooser.h"
 #include "clib/luakit.h"
 #include "clib/request.h"
 #include "clib/sqlite3.h"
@@ -122,6 +123,8 @@ luaH_init(gchar ** uris)
 
     /* Export download */
     download_class_setup(L);
+    /* Export file chooser */
+    filechooser_class_setup(L);
 
     /* Export sqlite3 */
     sqlite3_class_setup(L);
