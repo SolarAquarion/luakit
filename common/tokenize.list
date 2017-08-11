@@ -212,6 +212,9 @@ ymax
 ypage_size
 zoom_level
 zoom_step
+mime_types
+selected_files
+multiple
 is_loading
 allow_modal_dialogs
 default_charset
